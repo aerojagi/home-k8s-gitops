@@ -4,5 +4,5 @@ metadata:
   name: hello-from-github
   namespace: gitops-demo
 data:
-  message: "My first GitOps deployment: GitHub -> Argo CD -> Kubernetes"
+  message: "My first GitOps deployment: GitHub -> Argo CD -> rke2(kubernetes)"
   managed-by: "Argo CD"
