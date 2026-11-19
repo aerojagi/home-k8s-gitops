@@ -4,7 +4,11 @@
 # Registry, Gitaly, MinIO, KAS, SMTP, and any other custom configuration.
 # Store secret *references* here, not passwords or tokens.
 # These are ONLY the Traefik-specific settings from the previous Helm revision.
+installCertManager: false
 global:
+  gatewayApi:
+    enabled: false
+    configureCertmanager: false
   edition: ce
   ingress:
     enabled: true
