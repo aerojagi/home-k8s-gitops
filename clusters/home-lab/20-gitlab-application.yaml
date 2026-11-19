@@ -1,4 +1,7 @@
 # IMPORTANT: This app is intentionally MANUAL-SYNC only.
+# GitLab chart 10.5.7 / GitLab CE 19.5.6 requires separate PostgreSQL 17,
+# Redis and object storage. Do not synchronize until those services and their
+# Kubernetes Secret references have been configured and tested.
 # Do not sync it until worker-1 networking is healthy, existing data is backed up,
 # the old Helm installation's lifecycle has been planned, and values.yaml has been
 # reconciled with the existing GitLab settings and Kubernetes Secrets.
@@ -17,7 +20,7 @@ spec:
   sources:
     - repoURL: https://charts.gitlab.io
       chart: gitlab
-      targetRevision: 9.10.8
+      targetRevision: 10.5.7
       helm:
         releaseName: gitlab
         valueFiles:
