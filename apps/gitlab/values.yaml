@@ -14,8 +14,9 @@ global:
     enabled: true
     class: traefik
     provider: traefik
+    configureCertmanager: false
 nginx-ingress:
   enabled: false
 # We reuse the existing RKE2 Traefik; we do NOT deploy GitLab's bundled Traefik.
-traefik:
-  enabled: false
+certmanager-issuer:
+  email: ""
