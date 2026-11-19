@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: hello-from-github
+  namespace: gitops-demo
+data:
+  message: "My first GitOps deployment: GitHub -> Argo CD -> Kubernetes"
+  managed-by: "Argo CD"

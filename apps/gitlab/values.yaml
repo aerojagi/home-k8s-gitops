@@ -1,0 +1,16 @@
+# STAGING VALUES ONLY.  DO NOT SYNC GITLAB YET.
+# Merge and verify your EXISTING Helm user-supplied values first, preserving:
+# hostname/domain, secret references, storage, ingress TLS, database, Redis,
+# Registry, Gitaly, MinIO, KAS, SMTP, and any other custom configuration.
+# Store secret *references* here, not passwords or tokens.
+# These are ONLY the Traefik-specific settings from the previous Helm revision.
+global:
+  ingress:
+    enabled: true
+    class: traefik
+    provider: traefik
+nginx-ingress:
+  enabled: false
+# We reuse the existing RKE2 Traefik; we do NOT deploy GitLab's bundled Traefik.
+traefik:
+  enabled: false

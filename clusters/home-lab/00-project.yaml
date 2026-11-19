@@ -1,0 +1,25 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: home-lab
+  namespace: argocd
+  annotations:
+    argocd.argoproj.io/sync-wave: "0"
+spec:
+  description: Lab GitOps project; GitHub is the configuration source of truth
+  sourceRepos:
+    - git@github.com:aerojagi/home-k8s-gitops.git
+    - https://charts.gitlab.io
+  destinations:
+    - namespace: gitops-demo
+      server: https://kubernetes.default.svc
+    - namespace: gitlab
+      server: https://kubernetes.default.svc
+  # GitLab chart may create ClusterRole/ClusterRoleBinding resources.
+  # Wide permissions are suitable ONLY for this controlled personal lab.
+  clusterResourceWhitelist:
+    - group: '*'
+      kind: '*'
+  namespaceResourceWhitelist:
+    - group: '*'
+      kind: '*'
