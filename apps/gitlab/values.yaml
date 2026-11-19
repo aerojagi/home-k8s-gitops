@@ -5,6 +5,7 @@
 # Store secret *references* here, not passwords or tokens.
 # These are ONLY the Traefik-specific settings from the previous Helm revision.
 global:
+  edition: ce
   ingress:
     enabled: true
     class: traefik
